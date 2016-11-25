@@ -3,6 +3,7 @@
     "name": "FeaturedEpic",
     "rank": "Midshipman",
     "clearance": "1",
-    "ships": {}
+    "ships": {},
+    "note": ""
   }
 }
