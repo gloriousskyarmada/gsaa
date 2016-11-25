@@ -49,10 +49,14 @@
           async: false
         });
         $.getJSON("data/ships.json", function(data){
-          ships = data;
+          $.each(data, function(key,value){
+            ships[key] = [value.name, value.class, value.captain, value.status];
+          });
         });
         $.getJSON("data/people.json", function(data){
-          people = data;
+          $.each(data, function(key,value){
+            people[key] = [value.name, value.rank, value.clearance, value.notes];
+          });
         });
         alert(ships.join(" "));
         alert(people.join(" "));
