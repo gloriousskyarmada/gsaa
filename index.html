@@ -42,16 +42,21 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     <script>
-      var ships = [];
-      var people = [];
-      $.getJSON("data/ships.json", function(data){
-        ships = data;
+      $(document).ready(function(){
+        $.ajaxSetup({
+          async: false
+        });
+        var ships = [];
+        var people = [];
+        $.getJSON("data/ships.json", function(data){
+          ships = data;
+        });
+        $.getJSON("data/people.json", function(data){
+          people = data;
+        });
+        alert(ships);
+        alert(people);
       });
-      $.getJSON("data/people.json", function(data){
-        people = data;
-      });
-      alert(ships);
-      alert(people);
     </script>
   </body>
 </html>
